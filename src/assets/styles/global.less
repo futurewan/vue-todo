@@ -1,0 +1,61 @@
+@c-333: #333;
+@images:'../images';
+@backgroundColor:{background-color:#FFF};
+@width:100px;
+// reset
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	// vertical-align: baseline;
+	// background: transparent;
+}
+main, article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+html{box-sizing: border-box}
+*,
+*:before,
+*:after{
+    box-sizing: inherit
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// style
+body {font: 13px Helmet, Freesans, sans-serif;}
+body, select, input, textarea {color: #333;}
+a {color: #03f;}
+a:hover {color: #69f;}
+::-webkit-input-placeholder{color:#bebebe}
+:-ms-input-placeholder{color: #bebebe} //IE10+
+:-moz-placeholder,::-moz-placeholder{color:#bebebe;opacity: 1} //Firefox 4-18 && 19+
+
+
+
+
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("@{images}/index.jpeg") no-repeat;
+    @backgroundColor();
+    height: 100%;
+    background-size: cover;
+    font-size: 14px;
+    color: @c-333;
+}
+.tc{text-align: center}
+.box-c{width:@width - 20;margin:0 auto}
