@@ -4,8 +4,7 @@
         <span class="tabs">
             <span v-for="state in states" :key="state" 
                 :class="[state,filter === state ? 'actived' :'']" 
-                @click="toggleFilter(state)"
-            >
+                @click="toggleFilter(state)">
                 {{state}}
             </span>
         </span>
@@ -32,7 +31,7 @@
         },
         computed:{
             unFinish(){
-                return this.todos.filter(todo=>!todo.computed).length
+                return this.todos.filter(todo=>!todo.completed).length
             }
         },
         methods: {

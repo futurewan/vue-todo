@@ -14,10 +14,25 @@
                 required: true  //是否必填
             }
         },
+        data(){
+            return {
+                completed:this.todo.completed
+            }
+        },
         methods: {
             deleteTodo() {
                 this.$emit('del',this.todo.id)
             }
+        },
+        completed:{
+           _checked: {
+               get(){
+                   return this.todo.completed
+               },
+               set(){
+                   this.$emit('toggleTodo',this.todo)
+               }
+           }
         }
     };
 </script>

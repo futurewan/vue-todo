@@ -90,6 +90,10 @@ if (isDev) {
         new webpack.NoEmitOnErrorsPlugin()  //减少不要的信息
     )
 } else{
+    config.entry = {
+        app:path.join(__dirname, 'src/index.js'),
+        vendor:['vue']
+    };
     config.output.filename = '[name].[chunkhash:8].js'; //chunkhash 只可用于生产环境
     config.module.rules.push({
         test: /\.less$/,
@@ -108,7 +112,13 @@ if (isDev) {
         })
     })
     config.plugins.push(
-        new ExtractTextPlugin('style.[contentHash:8].css')
+        new ExtractTextPlugin('style.[contentHash:8].css'),
+        new webpack.optimize.CommonsChunkPlugin({
+            name:'vendor'
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name:'runtime'
+        })
     )
 }
 

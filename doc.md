@@ -4,7 +4,7 @@
 在不同系统环境下设置变量
 
 ##webpack-dev-server
-开发环境用于调试报错信息等
+开发环境用于调试报错信息等,生成一个开发用的服务器，在文件有变化的时候自动给我们打包，然后刷新页面 .. 它还有个模块热替换的功能 .. 就是它可以只替换有变化的地方 .. 不需要刷新整个页面 ... 
 
 ##url-loader
 处理小于2k的图片，转换成base64位流文件
@@ -15,7 +15,7 @@ https://github.com/postcss/postcss/blob/master/docs/plugins.md
 比如css的语法验证，压缩，支持变量和混入语法
 
 ##extract-text-webpack-plugin
-把非javascript文件单独打包出来
+单独导出css文件
 
 ###数据绑定
 原来的实现方式：如果要让object对象的数据显示到html中需要js对DOM进行操作
@@ -36,5 +36,9 @@ template转换成vue中的render方法，render方法会用createElement方法�
 
 ##computed
 vue是reative的框架，声明好的数据会影响到依赖于该数据的template
+
+
+###
+类库代码单独打包，缓存
 
 
